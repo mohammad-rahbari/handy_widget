@@ -2,7 +2,7 @@ from tkinter import *
 import pyperclip
 import qrcode
 from PIL import ImageTk
-import time
+
 
 
 
