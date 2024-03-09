@@ -15,10 +15,9 @@ class Window:
         self.IS_HOST_PRESSED = False 
         self.win_size = (250,280)
         self.image_size = (250,250)
-        self.win_location = (1290,0)
+        self.win_location = (500,500)
         self.window = None
         self.image_box=None
-        self.text_box =None
         self.modify_btn = None
         self.ative_btn = None
         self.top_frame = None
@@ -39,7 +38,9 @@ class Window:
         self.window.overrideredirect(not self.is_modifiable)
         self.top_frame = Frame(self.window)
         self.top_frame.grid(row=1, column=0)
-        # self.window.attributes('-alpha',0.8)
+
+        
+        # self.window.attributes('-alpha',0.8)  ------ use this to make the window transparent
 
         self.window.geometry(f"{self.win_size[0]}x{self.win_size[1]}+{self.win_location[0]}+{self.win_location[1]}")
         self.modify_btn= Button(self.top_frame,text = "modify toggle",command=self.modify_mode , height=0, width=15)  
@@ -67,14 +68,12 @@ class Window:
                 self.image_flag = True
                 self.image_box = Label(self.window, image = img ) 
                 self.image_box.grid(row=0, column=0)
-                # self.text_box = Label(self.window, text= text)
-                # self.text_box.pack()
+
                 
                 mainloop()
 
 
             else:
-                # self.text_box.configure(text=text)
                 self.image_box.configure(image=img)
                 mainloop()
 
